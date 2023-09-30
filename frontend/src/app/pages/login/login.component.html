@@ -1,0 +1,18 @@
+<mat-card class="login-card">
+    <mat-card-header class="title py-2">
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="E-mail" type="email" [(ngModel)]="pessoa.email" name= "email">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Senha" type="password" [(ngModel)]="pessoa.senha" name="senha">
+        </mat-form-field>
+        <div class="login-button py-2">
+            <button mat-raised-button color="primary" type="submit" (click)="fazerLogin()">Entrar</button>
+          </div>
+      </form>
+    </mat-card-content>
+  </mat-card>

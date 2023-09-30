@@ -1,0 +1,22 @@
+.post-card {
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 16px;
+  }
+  
+  .post-content {
+    display: flex; 
+  }
+
+  .post-image {
+    margin-right: 16px; 
+  }
+
+  .post-details {
+    flex: 1; 
+  }
+
+  .post-details p {
+    margin-top: 16px;
+  }

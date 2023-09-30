@@ -2,6 +2,7 @@ package com.example.backend.controller;
 
 import com.example.backend.config.secutity.JwtService;
 import com.example.backend.dto.AuthenticationDTO;
+import com.example.backend.dto.AuthenticationResponseDTO;
 import com.example.backend.model.Pessoa;
 import com.example.backend.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("auth")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AuthenticationController {
 
     @Autowired
@@ -26,16 +28,19 @@ public class AuthenticationController {
     @Autowired
     private JwtService jwtService;
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/login")
     public ResponseEntity login (@RequestBody AuthenticationDTO data){
         UsernamePasswordAuthenticationToken usernamePassword = new UsernamePasswordAuthenticationToken(data.getEmail(), data.getSenha());
         Authentication auth = this.authenticationManager.authenticate(usernamePassword);
 
         String token = jwtService.generateToken((Pessoa) auth.getPrincipal());
+        AuthenticationResponseDTO response = new AuthenticationResponseDTO(token);
 
-        return ResponseEntity.ok(token);
+        return ResponseEntity.ok(response);
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/create")
     public ResponseEntity create(@RequestBody AuthenticationDTO data){
         if( (data.getEmail() == null || data.getSenha() == null || data.getNome() == null )

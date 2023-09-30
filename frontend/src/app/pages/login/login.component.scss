@@ -1,0 +1,21 @@
+.full-width {
+    width: 100%;
+  }
+
+  .login-card {
+    max-width: 1000px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .title {
+    text-align: center;
+    display: inline;
+    color: white;
+  }
+
+  .login-button {
+    text-align: center;
+  }
