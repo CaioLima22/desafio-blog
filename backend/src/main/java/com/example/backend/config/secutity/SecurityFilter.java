@@ -1,5 +1,6 @@
 package com.example.backend.config.secutity;
 
+import com.auth0.jwt.algorithms.Algorithm;
 import com.example.backend.repository.PessoaRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -32,7 +33,9 @@ public class SecurityFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String token = this.recoverToken(request);
         if(token != null){
+            Algorithm algorithm = Algorithm.HMAC256(secret);
             Claims body = Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+            String email = body.getSubject();
             UserDetails user = pessoaRepository.findByEmail(body.getSubject());
 
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
@@ -43,7 +46,7 @@ public class SecurityFilter extends OncePerRequestFilter {
     private String recoverToken(HttpServletRequest request){
         String authHeader = request.getHeader("Authorization");
         if(authHeader == null) return null;
-        return authHeader.replace("Bearer", "");
+        return authHeader.replace("Bearer ", "");
 
     }
 }
