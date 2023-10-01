@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Post } from 'src/app/model/post';
+import { PostService } from 'src/app/service/post.service';
 
 @Component({
   selector: 'app-feed',
@@ -8,14 +9,16 @@ import { Post } from 'src/app/model/post';
 })
 export class FeedComponent {
 
-  posts: Post[] = [
-    {
-      titulo: 'Título do Post 1',
-      conteudo: 'Conteúdo do Post 1'
-    },
-    {
-      titulo: 'Título do Post 2',
-      conteudo: 'Conteúdo do Post 2'
-    },
-  ];
+  constructor(private postService: PostService){};
+
+  posts: Post[] = [];
+
+  ngOnInit() {
+    this.postService.findAll()
+      .subscribe((response: any) => {
+        if (response) {
+          this.posts = response; 
+        }
+      });
+  }
 }

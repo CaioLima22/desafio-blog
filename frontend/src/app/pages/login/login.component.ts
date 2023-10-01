@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Pessoa } from 'src/app/model/pessoa';
 import { LoginService } from 'src/app/service/login.service';
 
@@ -9,16 +10,17 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class LoginComponent {
 
-  constructor(private loginService: LoginService){};
+  constructor(private loginService: LoginService, private router: Router, private activatedRoute: ActivatedRoute){};
 
   pessoa: Pessoa = new Pessoa();
 
-
   fazerLogin() {
     this.loginService.login(this.pessoa)
-      .subscribe((response) => {
-        if(response){
-          console.log(response);
+      .subscribe((response: any) => {
+        if (response) {
+          this.pessoa.jwt = response.token;
+          localStorage.setItem('pessoa', JSON.stringify(this.pessoa));
+          this.router.navigate(["/feed"]);
         }
       });
   }

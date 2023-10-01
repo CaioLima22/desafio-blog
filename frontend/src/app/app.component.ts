@@ -9,6 +9,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent {
   title = 'frontend';
   showNavbar: boolean = false;
+  pessoaLogada: boolean = false;
 
   constructor(private router: Router) {}
 
@@ -23,5 +24,11 @@ export class AppComponent {
         }
       }
     });
+    if (localStorage.getItem('pessoa')){
+      let pessoaLogada = JSON.parse(localStorage.getItem('pessoa')?? "");;
+      if(pessoaLogada && pessoaLogada.jwt){
+        this.pessoaLogada = true
+      }
+    }
   }
 }

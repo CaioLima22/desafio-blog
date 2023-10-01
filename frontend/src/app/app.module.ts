@@ -14,9 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './component/post/post.component';
 import { FeedComponent } from './pages/feed/feed.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { PageTitleComponent } from './component/page-title/page-title.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PostComponent, FeedComponent, NavbarComponent],
+  declarations: [AppComponent, LoginComponent, PostComponent, FeedComponent, NavbarComponent, PageTitleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
