@@ -1,13 +1,18 @@
 <mat-card class="post-card my-3">
-  <div class="post-content">
-    <div class="post-image">
+  <div class="post-content row">
+    <div class="post-image col-md-3">
       <img class="post-image" mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
     </div>
-    <div class="post-details">
+    <div class="post-details col-sm-6" >
       <h2>{{ post.titulo }}</h2>
-      <p>{{ post.conteudo }}</p>
+      <p class="conteudo">{{ post.conteudo }}</p>
     </div>
-    <div>
+    <div style="text-align: start; padding-top: 8px;" class="col-md-6">
+      <button  mat-flat-button color="primary" (click)="navigatePost()">
+        Ver Post
+      </button>
+    </div>
+    <div style="text-align: end; padding-top: 2px;" class="col-md-6">
       <button *ngIf="validateAutorPost()" mat-mini-fab color="warn" (click)="excluirPost()">
         <mat-icon>delete</mat-icon>
       </button>

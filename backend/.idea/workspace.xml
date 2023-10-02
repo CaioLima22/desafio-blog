@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd27a986-0165-46c3-89ed-f56bec75f318" name="Changes" comment="" />
+    <list default="true" id="dd27a986-0165-46c3-89ed-f56bec75f318" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/post/post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/post/post.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/post/post.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/post/post.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/post/post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/post/post.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/service/post.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/service/post.service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +60,12 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Dev/Desafios/desafio-blog/backend&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.backend.service" />
+      <recent name="com.example.backend.dto" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="BlogApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.backend.BlogApplication" />
@@ -99,6 +115,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend/controller/AuthenticationController.java</url>
           <line>37</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend/controller/PostController.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

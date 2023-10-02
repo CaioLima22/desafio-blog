@@ -6,6 +6,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -17,9 +19,10 @@ import { FeedComponent } from './pages/feed/feed.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { PageTitleComponent } from './component/page-title/page-title.component';
 import { NovoPostComponent } from './pages/novo-post/novo-post.component';
+import { VisualizarPostComponent } from './pages/visualizar-post/visualizar-post.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PostComponent, FeedComponent, NavbarComponent, PageTitleComponent, NovoPostComponent],
+  declarations: [AppComponent, LoginComponent, PostComponent, FeedComponent, NavbarComponent, PageTitleComponent, NovoPostComponent, VisualizarPostComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,7 +33,9 @@ import { NovoPostComponent } from './pages/novo-post/novo-post.component';
     MatButtonModule,
     FormsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

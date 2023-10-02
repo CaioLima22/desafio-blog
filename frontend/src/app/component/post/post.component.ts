@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Post } from 'src/app/model/post';
 import { PostService } from 'src/app/service/post.service';
 
@@ -9,7 +10,7 @@ import { PostService } from 'src/app/service/post.service';
 })
 export class PostComponent {
 
-  constructor(private postService: PostService) { };
+  constructor(private postService: PostService, private router: Router) { };
 
   @Input()
   post: Post = new Post();
@@ -27,10 +28,14 @@ export class PostComponent {
 
   excluirPost() {
     this.postService.delete(this.post).subscribe((result: any) => {
-      if(result){
+      if (result) {
         this.postEvent.emit('delete');
       }
-      });
+    });
+  }
+
+  navigatePost() {
+    this.router.navigate(["post/" + this.post.id])
   }
 
 }

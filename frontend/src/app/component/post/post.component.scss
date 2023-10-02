@@ -6,7 +6,15 @@
   }
   
   .post-content {
-    display: flex; 
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  .conteudo {
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .post-image {

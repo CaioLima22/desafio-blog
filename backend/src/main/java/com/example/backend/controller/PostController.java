@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.dto.OutputPostByIdDTO;
 import com.example.backend.dto.PostInputDTO;
 import com.example.backend.dto.PostOutputDTO;
 import com.example.backend.model.Post;
@@ -43,17 +44,28 @@ public class PostController {
 
     }
 
-    @DeleteMapping("/{postId}")
-    public ResponseEntity<Long> deletePost(@PathVariable Long postId) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Long> deletePost(@PathVariable Long id) {
         try {
-            Post post = service.findById(postId);
+            OutputPostByIdDTO post = service.findById(id);
             if (post == null) {
                 return ResponseEntity.notFound().build();
             }
-            service.delete(postId);
-            return ResponseEntity.ok(postId);
+            service.delete(id);
+            return ResponseEntity.ok(id);
         } catch (Exception e) {
             return null;
+        }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<OutputPostByIdDTO> getUserById(@PathVariable Long id) {
+        OutputPostByIdDTO post = service.findById(id);
+
+        if (post != null) {
+            return ResponseEntity.ok(post);
+        } else {
+            return ResponseEntity.notFound().build();
         }
     }
 }

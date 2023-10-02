@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+    <mat-card-header style="text-align: center; display: block;" class="mb-5">
+      <mat-card-title>{{post.titulo}}</mat-card-title>
+      <mat-card-subtitle>Escrito por: {{post.nomeAutor}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content style="width: 80%; display: block; align-self: center; margin-bottom: 50px;">
+      <p>
+        {{post.conteudo}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="start">
+      <button mat-raised-button color="primary">Comentar</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-list class="comentarios">
+    <div>
+        <mat-list-item>
+            Looping de comentários
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </div>
+  </mat-list>

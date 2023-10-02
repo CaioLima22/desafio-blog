@@ -13,6 +13,10 @@ export class PostService {
     return this.http.get(environment.api_url + 'post', { headers: new HttpHeaders().set('Content-Type', 'application/json') });
   }
 
+  findById(idPost: number) {
+    return this.http.get(environment.api_url + 'post/' + idPost, { headers: this.recuperarOptionsHeaders() });
+  }
+
   save(post: Post) {
     return this.http.post(environment.api_url + 'post', post, {headers: this.recuperarOptionsHeaders()});
   }

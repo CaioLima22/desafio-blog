@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { FeedComponent } from './pages/feed/feed.component';
 import { NovoPostComponent } from './pages/novo-post/novo-post.component';
+import { VisualizarPostComponent } from './pages/visualizar-post/visualizar-post.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'feed', component: FeedComponent },
   { path: 'novo-post', component: NovoPostComponent },
+  { path: 'post/:id', component: VisualizarPostComponent },
 ];
 
 @NgModule({

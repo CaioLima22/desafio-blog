@@ -5,6 +5,9 @@ export class Post {
     image!: File | null;
     autor_id!:number;
 
+    //Transient
+    nomeAutor!: string;
+
     constructor(){
         this.titulo = "";
         this.conteudo = "";
