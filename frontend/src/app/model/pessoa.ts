@@ -1,12 +1,13 @@
 export class Pessoa {
-    email: string;
-    nome:string;
-    senha: string;
-    jwt!:string
+  id!: number;
+  email: string;
+  nome: string;
+  senha: string;
+  jwt!: string
 
-    constructor() {
-      this.nome = '';
-      this.email = '';
-      this.senha = '';
-    }
+  constructor() {
+    this.nome = '';
+    this.email = '';
+    this.senha = '';
   }
+}

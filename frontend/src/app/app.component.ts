@@ -25,7 +25,7 @@ export class AppComponent {
       }
     });
     if (localStorage.getItem('pessoa')){
-      let pessoaLogada = JSON.parse(localStorage.getItem('pessoa')?? "");;
+      let pessoaLogada = JSON.parse(localStorage.getItem('pessoa')?? "");
       if(pessoaLogada && pessoaLogada.jwt){
         this.pessoaLogada = true
       }

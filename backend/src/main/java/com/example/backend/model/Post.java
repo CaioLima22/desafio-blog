@@ -22,6 +22,9 @@ public class Post {
     private Date data_publicacao;
     private Integer autor_id;
 
+    @Transient
+    public String jwtAutor;
+
     public Post (PostInputDTO input){
         this.titulo = input.getTitulo();
         this.conteudo = input.getConteudo();

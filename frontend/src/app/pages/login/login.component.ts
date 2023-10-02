@@ -19,6 +19,8 @@ export class LoginComponent {
       .subscribe((response: any) => {
         if (response) {
           this.pessoa.jwt = response.token;
+          this.pessoa.id = response.pessoa.id;
+          this.pessoa.nome = response.pessoa.nome;
           localStorage.setItem('pessoa', JSON.stringify(this.pessoa));
           this.router.navigate(["/feed"]);
         }

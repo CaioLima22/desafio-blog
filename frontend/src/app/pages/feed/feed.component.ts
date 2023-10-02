@@ -14,11 +14,26 @@ export class FeedComponent {
   posts: Post[] = [];
 
   ngOnInit() {
+    this.recuperarPosts();
+  }
+
+  recuperarPosts(){
     this.postService.findAll()
       .subscribe((response: any) => {
         if (response) {
           this.posts = response; 
         }
       });
+  }
+
+  receberEvent(event: any){
+    switch(event){
+      case "delete":
+        this.recuperarPosts();
+        break;
+      case "abrirPost":
+        this.recuperarPosts;
+        break;
+    }
   }
 }

@@ -1,0 +1,17 @@
+<app-page-title pageTitle="Novo Post"></app-page-title>
+<mat-card>
+    <form #myForm="ngForm" (submit)="onSubmit()">
+      <mat-form-field style="width: 50%; margin-left: 20px;">
+        <mat-label>Título</mat-label>
+        <input matInput placeholder="Título" [(ngModel)]="post.titulo" name="title" required>
+      </mat-form-field>
+      <mat-form-field style="width: 70%; margin-left: 20px;">
+        <mat-label>Conteúdo</mat-label>
+        <textarea matInput placeholder="Conteúdo" [(ngModel)]="post.conteudo" name="content" required></textarea>
+      </mat-form-field>
+      <div class="col-md-12">
+        <input style="margin: 20px;" type="file" (change)="onFileSelected($event)" accept="image/*" />
+    </div>
+        <button style="margin: 20px; width: 10%; " type="submit" [disabled]="myForm.invalid" mat-raised-button color="primary">Salvar</button>
+    </form>
+  </mat-card>

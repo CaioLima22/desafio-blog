@@ -35,7 +35,7 @@ public class AuthenticationController {
         Authentication auth = this.authenticationManager.authenticate(usernamePassword);
 
         String token = jwtService.generateToken((Pessoa) auth.getPrincipal());
-        AuthenticationResponseDTO response = new AuthenticationResponseDTO(token);
+        AuthenticationResponseDTO response = new AuthenticationResponseDTO(token, (Pessoa) auth.getPrincipal());
 
         return ResponseEntity.ok(response);
     }
