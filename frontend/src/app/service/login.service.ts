@@ -13,4 +13,8 @@ export class LoginService {
   login(pessoa: Pessoa) {
     return this.http.post(environment.api_url + 'auth/login', pessoa, { headers: this.options });
   }
+
+  cadastro(pessoa: Pessoa) {
+    return this.http.post(environment.api_url + 'auth/create', pessoa, { headers: this.options });
+  }
 }

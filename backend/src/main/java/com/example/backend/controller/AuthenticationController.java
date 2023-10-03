@@ -49,8 +49,8 @@ public class AuthenticationController {
         String senhaHash = new BCryptPasswordEncoder().encode(data.getSenha());
         Pessoa novaPessoa = new Pessoa(data.getEmail(), senhaHash, data.getNome());
 
-        this.repository.save(novaPessoa);
+        Pessoa pessoacadastrada = this.repository.save(novaPessoa);
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(pessoacadastrada);
     }
 }

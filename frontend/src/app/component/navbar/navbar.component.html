@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
     <button mat-button routerLink="/feed" style="font-size: x-large;">Blogues</button>
     <span class="spacer"></span>
-    <button *ngIf="!logado" mat-button routerLink="/login">Login</button>
-    <button *ngIf="!logado" mat-button routerLink="/registro">Registrar</button>
-    <button *ngIf="logado" mat-button (click)="logout()">Logout</button>
+    <button *ngIf="!logado && disableLinks" mat-button routerLink="/login">Login</button>
+    <button *ngIf="!logado && disableLinks" mat-button routerLink="/registro">Registrar</button>
+    <button *ngIf="logado && disableLinks" mat-button (click)="logout()">Logout</button>
   </mat-toolbar>

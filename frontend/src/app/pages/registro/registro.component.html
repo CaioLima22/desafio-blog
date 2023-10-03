@@ -1,0 +1,21 @@
+<mat-card class="registro-card">
+    <mat-card-header class="title py-2">
+      <mat-card-title>Cadastre-se</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Nome" type="text" [(ngModel)]="pessoa.nome" name= "nome">
+          </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="E-mail" type="email" [(ngModel)]="pessoa.email" name= "email">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Senha" type="password" [(ngModel)]="pessoa.senha" name="senha">
+        </mat-form-field>
+        <div class="registro-button py-2">
+            <button mat-raised-button color="primary" type="submit" (click)="fazerCadastro()">Cadastrar</button>
+          </div>
+      </form>
+    </mat-card-content>
+  </mat-card>

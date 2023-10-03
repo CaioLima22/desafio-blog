@@ -6,17 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="dd27a986-0165-46c3-89ed-f56bec75f318" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/secutity/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/config/secutity/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/post/post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/post/post.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/novo-post/novo-post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/novo-post/novo-post.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/visualizar-post/visualizar-post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/visualizar-post/visualizar-post.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/visualizar-post/visualizar-post.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/visualizar-post/visualizar-post.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/visualizar-post/visualizar-post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/visualizar-post/visualizar-post.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/service/post.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/service/post.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/service/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/service/login.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

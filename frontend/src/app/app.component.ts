@@ -17,7 +17,7 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const currentUrl = event.url;
-        if (currentUrl !== '/login' && currentUrl !== '/register') {
+        if (currentUrl !== '/login' && currentUrl !== '/registro') {
           this.showNavbar = true;
         } else {
           this.showNavbar = false;
