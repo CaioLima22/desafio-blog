@@ -14,9 +14,19 @@ Certifique-se de ter os seguintes requisitos instalados antes de começar:
 
 **Utilize o user, senha e porta padrões do postgres**
 
-Execute os seguintes comandos SQL para criar as tabelas necessárias no PostgreSQL:
+Execute os seguintes comandos SQL para criar o banco e as tabelas necessárias no PostgreSQL:
 
 ```sql
+CREATE DATABASE blog
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
 CREATE TABLE IF NOT EXISTS public.post
 (
     id integer NOT NULL DEFAULT nextval('post_id_seq'::regclass),
