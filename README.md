@@ -12,6 +12,8 @@ Certifique-se de ter os seguintes requisitos instalados antes de começar:
 
 ## Configuração do Banco de Dados
 
+**Utilize o user, senha e porta padrões do postgres**
+
 Execute os seguintes comandos SQL para criar as tabelas necessárias no PostgreSQL:
 
 ```sql
