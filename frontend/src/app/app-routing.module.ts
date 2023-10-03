@@ -6,6 +6,7 @@ import { NovoPostComponent } from './pages/novo-post/novo-post.component';
 import { VisualizarPostComponent } from './pages/visualizar-post/visualizar-post.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'feed', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'feed', component: FeedComponent },
   { path: 'novo-post', component: NovoPostComponent },

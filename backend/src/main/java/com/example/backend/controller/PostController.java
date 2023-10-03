@@ -4,6 +4,7 @@ import com.example.backend.dto.OutputPostByIdDTO;
 import com.example.backend.dto.PostInputDTO;
 import com.example.backend.dto.PostOutputDTO;
 import com.example.backend.model.Post;
+import com.example.backend.model.PostComentario;
 import com.example.backend.repository.PostRepository;
 import com.example.backend.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,8 +59,22 @@ public class PostController {
         }
     }
 
+    @DeleteMapping("/comentario/{id}")
+    public ResponseEntity<Long> deleteComentario(@PathVariable Long id) {
+        try {
+            PostComentario comentario = service.findComentarioById(id);
+            if (comentario == null) {
+                return ResponseEntity.notFound().build();
+            }
+            service.deleteComentario(id);
+            return ResponseEntity.ok(id);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     @GetMapping("/{id}")
-    public ResponseEntity<OutputPostByIdDTO> getUserById(@PathVariable Long id) {
+    public ResponseEntity<OutputPostByIdDTO> getPostById(@PathVariable Long id) {
         OutputPostByIdDTO post = service.findById(id);
 
         if (post != null) {
@@ -67,5 +82,21 @@ public class PostController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/comentario/{idPost}")
+    public ResponseEntity<List<PostComentario>> getPostComentarioById(@PathVariable Long idPost) {
+        List<PostComentario> postComentario =service.findComentarioByIdPost(idPost);
+
+        if (!postComentario.isEmpty()) {
+            return ResponseEntity.ok(postComentario);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PostMapping("/comentario")
+    public ResponseEntity<PostComentario> getPostComentarioById(@RequestBody PostComentario input) {
+        return ResponseEntity.ok(service.saveComentario(input));
     }
 }

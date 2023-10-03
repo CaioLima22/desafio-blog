@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title style="font-size: medium;">{{comentario.autor.nome}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p style="padding-left: 30px;">
+        {{comentario.comentario}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button *ngIf="validateAutorComentario()" mat-mini-fab color="warn" (click)="excluirComentario()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>

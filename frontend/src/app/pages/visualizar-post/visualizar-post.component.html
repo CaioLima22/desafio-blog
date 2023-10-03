@@ -1,22 +1,38 @@
-<mat-card class="example-card">
-    <mat-card-header style="text-align: center; display: block;" class="mb-5">
-      <mat-card-title>{{post.titulo}}</mat-card-title>
-      <mat-card-subtitle>Escrito por: {{post.nomeAutor}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content style="width: 80%; display: block; align-self: center; margin-bottom: 50px;">
-      <p>
-        {{post.conteudo}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="start">
-      <button mat-raised-button color="primary">Comentar</button>
-    </mat-card-actions>
+<mat-card>
+  <mat-card-header style="text-align: center; display: block;" class="mb-5">
+    <mat-card-title>{{post.titulo}}</mat-card-title>
+    <mat-card-subtitle>Escrito por: {{post.nomeAutor}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content style="width: 80%; display: block; align-self: center; margin-bottom: 50px;">
+    <p>
+      {{post.conteudo}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions align="start">
+    <button mat-raised-button [disabled]="!pessoaLogada" color="primary" *ngIf="!novoComentario"
+      (click)="addComentario()">Comentar</button>
+  </mat-card-actions>
+
+  <mat-card class="p-4" *ngIf="novoComentario">
+    <form #myForm="ngForm" class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Comentário</mat-label>
+        <input matInput #message maxlength="30" placeholder="Escreva um comentário" [(ngModel)]="comentario.comentario"  name="comentario" required>
+        <mat-hint align="end">{{message.value.length}} / 30</mat-hint>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid" (click)="salvarComentario()">Salvar</button>
+    </form>
   </mat-card>
-  <mat-list class="comentarios">
-    <div>
-        <mat-list-item>
-            Looping de comentários
-        </mat-list-item>
-        <mat-divider></mat-divider>
+
+  <mat-list class="comentario pt-4" *ngIf="comentarios.length > 0">
+    <h4>Comentáios</h4>
+    <mat-divider></mat-divider>
+    <div *ngFor="let comentario of comentarios">
+      <mat-list-item style="height: auto;">
+        <app-comentario [comentario]="comentario" (postEvent)="receberEvent($event)"></app-comentario>
+      </mat-list-item>
+      <mat-divider></mat-divider>
     </div>
   </mat-list>
+
+</mat-card>

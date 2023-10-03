@@ -20,10 +20,10 @@ export class NovoPostComponent {
       if(pessoaLogada && pessoaLogada.jwt){
         this.post.autor_id = pessoaLogada.id;
       }else{
-        this.router.navigate(["/feed"]);
+        this.router.navigate(["/login"]);
       }
     }else{
-      this.router.navigate(["/feed"]);
+      this.router.navigate(["/login"]);
     }
   }
 

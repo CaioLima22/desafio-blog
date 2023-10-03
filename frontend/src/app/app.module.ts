@@ -20,9 +20,10 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { PageTitleComponent } from './component/page-title/page-title.component';
 import { NovoPostComponent } from './pages/novo-post/novo-post.component';
 import { VisualizarPostComponent } from './pages/visualizar-post/visualizar-post.component';
+import { ComentarioComponent } from './component/comentario/comentario.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PostComponent, FeedComponent, NavbarComponent, PageTitleComponent, NovoPostComponent, VisualizarPostComponent],
+  declarations: [AppComponent, LoginComponent, PostComponent, FeedComponent, NavbarComponent, PageTitleComponent, NovoPostComponent, VisualizarPostComponent, ComentarioComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
