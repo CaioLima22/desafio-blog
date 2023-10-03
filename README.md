@@ -57,7 +57,10 @@ CREATE TABLE IF NOT EXISTS public.usuario
 );
 ```
 ## Configuração do Projeto Frontend
-Navegue até a pasta frontend do projeto e execute o seguinte comando para instalar as dependências: npm install
+Navegue até a pasta frontend do projeto e execute o seguinte comando no promp de comando da pasta para instalar as dependências:
+```cmd
+npm install
+```
 
-#Execução
+## Execução
 Após configurar o banco de dados e as dependências do frontend e backend, você pode iniciar o projeto. Primeiro, inicie o servidor backend e, em seguida, o servidor frontend.
